@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/Login.css'
 
 const Login = () => {
+    // varriable d'etat, dans role la valeur par defaut cest etudiant
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [role, setRole] = useState('etudiant')
   return (
     <div className="login-page">
         <div className="login-container">
