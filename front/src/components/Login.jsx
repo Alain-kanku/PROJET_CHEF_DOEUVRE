@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../css/Login.css'
 
 const Login = () => {
-    // varriable d'etat, dans role la valeur par defaut cest etudiant
+    // varriable d'etat, dans role la valeur par defaut cest etudiant et les autre une chaine vide
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [role, setRole] = useState('etudiant')
@@ -12,15 +12,18 @@ const Login = () => {
             <h2>Login</h2>
             <div className="form-group">
                 <label htmlFor='username'>Username:</label>
-                <input type='text' placeholder='Entrer username'/>
+                <input type='text' placeholder='Entrer username'
+                onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div className="form-group">
                 <label htmlFor='password'>Password:</label>
-                <input type='text' placeholder='Entrer password'/>
+                <input type='text' placeholder='Entrer password'
+                 onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div className="form-group">
                 <label htmlFor='role'>Role:</label>
-                <select name='role' id='role'>
+                <select name='role' id='role'
+                 onChange={(e) => setRole(e.target.value)}>
                     <option value='decanat'>Decanat</option>
                     <option value='etudiant'>etudiant</option>
                     <option value='directeur'>Directeur</option>
